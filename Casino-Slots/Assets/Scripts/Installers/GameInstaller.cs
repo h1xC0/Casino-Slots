@@ -1,6 +1,7 @@
 ﻿using Slots.Game.Audio;
 using Slots.Game.Events;
 using Slots.Game.Rollers;
+using UI.WindowManager;
 using UnityEngine;
 using Zenject;
 
@@ -17,6 +18,7 @@ namespace Installers
                 public override void InstallBindings()
                 {
                         BindServices();
+                        BindWindowSystem();
 
                         Container.BindFactory<Roller, RollerFactory>()
                                 .FromComponentInNewPrefab(_rollerPrefab);
@@ -35,6 +37,19 @@ namespace Installers
                         Container.Bind<IEventTriggerService>()
                                 .FromComponentInNewPrefab(_triggerServiceInstance)
                                 .UnderTransform(transform)
+                                .AsSingle();
+                }
+
+                private void BindWindowSystem()
+                {
+                        Container
+                                .BindInterfacesTo<WindowManager>()
+                                .FromNew()
+                                .AsSingle();
+                        
+                        Container
+                                .BindInterfacesTo<WindowFactory>()
+                                .FromNew()
                                 .AsSingle();
                 }
         }

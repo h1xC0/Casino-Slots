@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce9e5f38951fca429b41eab86f93577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvasGroup: {fileID: 0}
+  _canvasGroup: {fileID: 50216846}
 --- !u!225 &50216846
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3770,10 +3770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd86f040927a89a4689988e733fcb74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reduceButton: {fileID: 272346508}
-  _increaseButton: {fileID: 1370801446}
-  _betTMP: {fileID: 648618024}
-  _betAmount: 10
 --- !u!114 &1883002101
 MonoBehaviour:
   m_ObjectHideFlags: 0
