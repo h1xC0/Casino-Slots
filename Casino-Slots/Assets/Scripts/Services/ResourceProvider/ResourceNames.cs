@@ -1,5 +1,6 @@
 using System;
 using ResourceProvider;
+using UI.Credits;
 
 namespace Services.ResourceProvider
 {
@@ -8,6 +9,7 @@ namespace Services.ResourceProvider
     
         private static readonly ResourceInfo[] Resources =
         {
+            new(typeof(CreditsView), "Prefabs/CreditsView")
         };
         
         public static string GetPath<TResource>(bool baseType = false) where TResource : IResource

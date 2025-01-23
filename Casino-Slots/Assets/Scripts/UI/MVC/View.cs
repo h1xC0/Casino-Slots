@@ -1,14 +1,16 @@
+using System;
 using UnityEngine;
 
 namespace UI.MVC
 {
-    public class View : MonoBehaviour, IView
+    public abstract class View : MonoBehaviour, IView
     {
+        public event Action InitializeEvent;
         public RectTransform RectTransform => (RectTransform)transform;
         
         public virtual void Initialize()
         {
-
+            InitializeEvent?.Invoke();
         }
 
         public virtual void OnDisplay()

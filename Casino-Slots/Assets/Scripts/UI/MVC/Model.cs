@@ -15,7 +15,7 @@ namespace UI.MVC
             View.OnDisplay();
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             View.Dispose();
         }

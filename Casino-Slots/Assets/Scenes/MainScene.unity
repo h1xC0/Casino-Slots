@@ -538,7 +538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &198622496
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1390,7 +1390,7 @@ MonoBehaviour:
     type: 3}
   _rollerItemPrefab: {fileID: 1578457538340401119, guid: ebc67d4f2540c8c44b4aed8588dcd04c,
     type: 3}
-  _windowsParent: {fileID: 0}
+  _windowsParent: {fileID: 198622496}
 --- !u!114 &574224534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3770,6 +3770,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd86f040927a89a4689988e733fcb74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _reduceButton: {fileID: 0}
+  _increaseButton: {fileID: 0}
+  _betTMP: {fileID: 0}
 --- !u!114 &1883002101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4855,7 +4858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8752793427479796958
 MonoBehaviour:
   m_ObjectHideFlags: 0
