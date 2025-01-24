@@ -739,14 +739,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327dbbcf2ac139742a4eb9e9bc1fe6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameEvent: {fileID: 11400000, guid: f8b912f98b1a2d34089591fffb1e5578, type: 2}
+  _gameEvent: {fileID: 11400000, guid: c56e496ff0b7a0448994cae7ada1f239, type: 2}
   _onTriggerEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3504959821453882787}
         m_TargetAssemblyTypeName: UI.Credits.CreditsView, Slots.Game
         m_MethodName: ShowLosings
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

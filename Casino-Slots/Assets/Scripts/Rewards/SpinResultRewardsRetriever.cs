@@ -47,11 +47,12 @@ namespace Rewards
 
         private IEnumerator RetrieveRewards(IGrid grid, float delayBetweenRewardsInSeconds = 5f)
         {
+            int lineCredits = 0;
             for (int i = 0; i < _lineTypes.Length; ++i)
             {
                 _gridToLineConverter.GetLineValuesFromGrid(_lineTypes[i], grid, out List<int> valuesInLine);
                 var lineResult = _linePatternChecker.GetResultFromLine(valuesInLine);
-                int lineCredits = _payTableRewardsRetriever.RetrieveReward(lineResult as LineResult);
+                lineCredits = _payTableRewardsRetriever.RetrieveReward(lineResult as LineResult);
                 if (lineCredits > 0)
                 {
                     _eventTriggerService.Trigger("Show Line", new LinePopupData(i));
@@ -59,6 +60,11 @@ namespace Rewards
                     _audioService.Play("Win Credits");
                     yield return new WaitForSeconds(delayBetweenRewardsInSeconds);
                 }
+            }
+
+            if (lineCredits <= 0)
+            {
+                _eventTriggerService.Trigger("Show Lost");
             }
             _eventTriggerService.Trigger("Can Spin Again");
         }

@@ -26,11 +26,6 @@ namespace Rollers
             _bottomLimit = bottomLimit;
         }
 
-        public bool IsSpinning()
-        {
-            return _moveSpeed > 0;
-        }
-
         public void RequestSpin()
         {
             _moveSpeed = _startMoveSpeed;

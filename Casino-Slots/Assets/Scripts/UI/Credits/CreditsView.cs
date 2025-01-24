@@ -47,12 +47,9 @@ namespace UI.Credits
             Debug.Assert(creditsPopupData != null);
         }
 
-        public void ShowLosings(IGameEventData gameEventData)
+        public void ShowLosings()
         {
-            var spinResultData = gameEventData as SpinResultData;
-
-            if(spinResultData?.SpinResultGrid.NumberOfColumns == 0 && spinResultData.SpinResultGrid.NumberOfRows == 0)
-                AnimateWinnings(0);
+            AnimateWinnings(0);
         }
 
         private void ShowAnimationCredits(float modelCredits, bool animate = false)
