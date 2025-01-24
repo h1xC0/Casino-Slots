@@ -5,7 +5,7 @@ namespace UI.Credits
 {
     public class CreditsModel : Model<ICreditsView>, ICreditsModel
     {
-        public ReactiveProperty<long> Credits { get; set; } = new(50);
+        public ReactiveProperty<long> Credits { get; set; } = new(1000);
         public ReactiveProperty<long> Bet { get; set; } = new(100);
 
         public int BetSize => 100;
@@ -27,6 +27,12 @@ namespace UI.Credits
             SetAmount(-BetSize);
             OnModelChanged();
         }
+
+        public void MaxBet()
+        {
+            Bet.Value = Credits.Value;
+            OnModelChanged();
+        }
         
         private void SetAmount(long value)
         {
@@ -45,19 +51,5 @@ namespace UI.Credits
                     Bet.Value = BetSize;
             }
         }
-
-        public override void Dispose()
-        {
-            base.Dispose();
-            View.InitializeEvent -= () => OnModelChanged();
-        }
-    }
-
-    public interface ICreditsModel : IModel<ICreditsView>
-    {
-        ReactiveProperty<long> Credits { get; set; }
-        ReactiveProperty<long> Bet { get; set; }
-        int BetSize { get; }
-        void OnModelChanged(bool animate = false);
     }
 }

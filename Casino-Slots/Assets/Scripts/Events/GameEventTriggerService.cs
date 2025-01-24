@@ -1,5 +1,6 @@
 ﻿using Slots.Game.Libraries;
 using System.Collections.Generic;
+using Events.Data;
 using UnityEngine;
 using Zenject;
 

@@ -1,8 +1,10 @@
 ﻿using ResourceProvider;
+using Services.ResourceProvider;
 using Slots.Game.Audio;
 using Slots.Game.Events;
 using Slots.Game.Rollers;
 using UI.Credits;
+using UI.Reels;
 using UI.WindowManager;
 using UnityEngine;
 using Zenject;
@@ -34,7 +36,10 @@ namespace Installers
         public override void Start()
         {
             base.Start();
-            Container.Resolve<IWindowManager>().Open<CreditsController>();
+            var windowManager = Container.Resolve<IWindowManager>();
+
+            windowManager.Open<CreditsController>();
+            windowManager.Open<ReelsController>();
         }
 
         private void BindServices()
@@ -75,6 +80,13 @@ namespace Installers
         {
             Container
                 .Bind<CreditsMapper>()
+                .ToSelf()
+                .FromNew()
+                .AsSingle()
+                .NonLazy();
+            
+            Container
+                .Bind<ReelsMapper>()
                 .ToSelf()
                 .FromNew()
                 .AsSingle()

@@ -1,20 +1,32 @@
-﻿using Slots.Game.Audio;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Slots.Game.Audio;
 using Slots.Game.Events;
 using Slots.Game.Libraries;
-using System.Collections;
-using System.Collections.Generic;
+using Slots.Game.Rollers;
 using UnityEngine;
-using Zenject;
 
-namespace Slots.Game.Rollers
+namespace Rollers
 {
-    public class RollerManager : MonoBehaviour
+    public interface IRollerManager
     {
-        [Inject] private IAudioService _audioService;
-        [Inject] private IEventTriggerService _eventTriggerService;
-        [Inject] private RollerFactory _rollerFactory;
-        [Inject] private RollerSequencesLibrary _rollerSequencesLibrary;
-        [Inject] private SpriteLibrary _spriteAssets;
+        void Initialize(IAudioService audioService,
+            IEventTriggerService eventTriggerService,
+            RollerFactory rollerFactory,
+            RollerSequencesLibrary rollerSequencesLibrary,
+            SpriteLibrary spriteAssets);
+
+        void StartSpin();
+        void ResetGrid();
+    }
+    
+    public class RollerManager : MonoBehaviour, IRollerManager
+    {
+        private IAudioService _audioService;
+        private IEventTriggerService _eventTriggerService;
+        private RollerFactory _rollerFactory;
+        private RollerSequencesLibrary _rollerSequencesLibrary;
+        private SpriteLibrary _spriteAssets;
 
         private Roller[] _rollers;
 
@@ -24,9 +36,19 @@ namespace Slots.Game.Rollers
 
         public const int NumberOfRowsInGrid = 3;
         public const int NumberOfColumnsInGrid = 5;
-
-        private void Start()
+        
+        public void Initialize(IAudioService audioService,
+            IEventTriggerService eventTriggerService,
+            RollerFactory rollerFactory,
+            RollerSequencesLibrary rollerSequencesLibrary,
+            SpriteLibrary spriteAssets)
         {
+            _audioService = audioService;
+            _eventTriggerService = eventTriggerService;
+            _rollerFactory = rollerFactory;
+            _rollerSequencesLibrary = rollerSequencesLibrary;
+            _spriteAssets = spriteAssets;
+            
             _rollers = new Roller[NumberOfColumnsInGrid];
             InstantiateAndAddRollersToList();
         }

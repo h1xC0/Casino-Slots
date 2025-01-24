@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Services.ResourceProvider;
+using ResourceProvider;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace ResourceProvider
+namespace Services.ResourceProvider
 {
     public class ResourceProviderService : IResourceProviderService
     {

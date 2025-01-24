@@ -1,4 +1,5 @@
 ﻿using System;
+using Events.Data;
 using UnityEngine;
 
 namespace Slots.Game.Events

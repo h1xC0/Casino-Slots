@@ -1,4 +1,4 @@
-﻿namespace Slots.Game.Events
+﻿namespace Events.Data
 {
     public class LinePopupData : ILinePopupData
     {

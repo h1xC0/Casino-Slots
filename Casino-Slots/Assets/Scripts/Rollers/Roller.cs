@@ -4,6 +4,7 @@ using Slots.Game.Libraries;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Rollers;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -21,7 +22,6 @@ namespace Slots.Game.Rollers
 
         private const float _minSpinTimeInSeconds = 0.5f;
         private const float _maxSpinTimeInSeconds = 2f;
-        private const float _centerItemSpeed = 4f;
         private const float _centerItemDuration = .5f;
 
         private const float _itemSpinSpeed = 2000f;
@@ -68,7 +68,7 @@ namespace Slots.Game.Rollers
 
         public Vector3 GetLastItemLocalPosition()
         {
-            return _items[_items.Count - 1].transform.localPosition;
+            return _items[^1].transform.localPosition;
         }
 
         public void GetRollerItemsOnScreen(out List<int> itemsOnScreen)
@@ -86,11 +86,14 @@ namespace Slots.Game.Rollers
             {
                 var item = _rollerItemFactory.Create();
                 item.transform.SetParent(transform);
+                
                 var itemLocalPosition = Vector3.up * _startingItemYPosition + (i * GetSpacingBetweenItems());
                 item.transform.localPosition = itemLocalPosition;
                 item.transform.localScale = Vector3.one;
+                
                 var itemType = itemSequence.Assets[i];
                 var itemSprite = spriteLoader.Assets[(int)itemType];
+                
                 item.Initialize(this, itemType, itemSprite, _itemSpinSpeed, _itemBottomLimit);
                 _items.Add(item);
             }
@@ -122,9 +125,8 @@ namespace Slots.Game.Rollers
                 {
                     localPosition = Vector3.up * _startingItemYPosition + (i * GetSpacingBetweenItems());
                     _items[i].transform.DOLocalMove(localPosition, _centerItemDuration).SetEase(Ease.InCubic);
-                    // _items[i].transform.localPosition = Vector3.Lerp(_items[i].transform.localPosition, localPosition, Time.deltaTime * _centerItemSpeed);
                 }
-                if (_items[_items.Count - 1] && Mathf.Abs(_items[_items.Count - 1].transform.localPosition.y - localPosition.y) < 0.01f)
+                if (_items[^1] && Mathf.Abs(_items[^1].transform.localPosition.y - localPosition.y) < 0.01f)
                 {
                     _centerItemsOnScreen = false;
                 }

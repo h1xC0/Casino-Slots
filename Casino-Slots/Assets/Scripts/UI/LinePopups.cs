@@ -1,4 +1,5 @@
-﻿using Slots.Game.Events;
+﻿using Events.Data;
+using Slots.Game.Events;
 using Slots.Game.Utils;
 using UnityEngine;
 

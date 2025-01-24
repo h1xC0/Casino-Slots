@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Services.ResourceProvider;
 using Object = UnityEngine.Object;
 
 namespace ResourceProvider

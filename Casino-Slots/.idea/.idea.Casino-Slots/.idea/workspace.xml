@@ -5,15 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa7e526c-51fc-4a48-b2df-f906e33f79ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/ICreditsModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/ICreditsModel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Data/CreditsData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Data/ICreditsData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/IReelsView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/IReelsView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsMapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsMapper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsModel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsView.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Casino-Slots/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Casino-Slots/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NuGet/Resources/defaultIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/NuGet/Resources/defaultIcon.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/CreditsView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/CreditsView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/BackgroundMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/BackgroundMusic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/Data/CreditsPopupData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/Data/CreditsPopupData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Data/CreditsData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/Data/ICreditsPopupData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/Data/ICreditsPopupData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Data/ICreditsData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/Data/IEventData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Data/IEventData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/Data/IGameEventData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Data/IGameEventData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/Data/ILinePopupData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Data/ILinePopupData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/Data/LinePopupData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Data/LinePopupData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/GameEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/GameEventListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/GameEventListener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/GameEventTriggerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/GameEventTriggerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/IEventTriggerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/IEventTriggerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/UnityCustomGameDataEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/UnityCustomGameDataEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rollers/Roller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rollers/Roller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/ResourceProvider/IResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/ResourceProvider/IResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/ResourceProvider/IResourceProviderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/ResourceProvider/IResourceProviderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/ResourceProvider/ResourceNames.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/ResourceProvider/ResourceNames.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/ResourceProvider/ResourceProviderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/ResourceProvider/ResourceProviderService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/BetView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/BetView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/IBetView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/IBetView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CreditsPopup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CreditsPopup.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LinePopups.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LinePopups.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MVC/IView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MVC/IView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SpinButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/SpinButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SpinButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/SpinButton.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +67,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Services/ResourceProvider/ResourceNames.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8ce0bd04a7a04b4b9395538239d3fdd846ac00/ce/907bcd2a/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e1349e8da9c0471283f06e515075baad91400/29/b770658b/ReactiveProperty`1.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -75,13 +115,15 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="23144">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="23144" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -120,7 +162,7 @@
       <workItem from="1737489586627" duration="711000" />
       <workItem from="1737581262922" duration="5723000" />
       <workItem from="1737635114830" duration="10184000" />
-      <workItem from="1737672446537" duration="430000" />
+      <workItem from="1737672446537" duration="4516000" />
     </task>
     <servers />
   </component>
@@ -136,5 +178,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsView.cs</url>
+          <line>20</line>
+          <properties documentPath="C:\Unity Projects\casino-slots\Casino-Slots\Assets\Scripts\UI\Reels\ReelsView.cs" containingFunctionPresentation="Method 'Initialize'">
+            <startOffsets>
+              <option value="615" />
+            </startOffsets>
+            <endOffsets>
+              <option value="673" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

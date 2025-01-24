@@ -2,9 +2,9 @@ using UI.MVC;
 
 namespace UI.Credits
 {
-    public class CreditsController : Controller<ICreditsView, CreditsModel>
+    public class CreditsController : Controller<ICreditsView, ICreditsModel>
     {
-        public CreditsController(ICreditsView viewContract, CreditsModel modelContract) 
+        public CreditsController(ICreditsView viewContract, ICreditsModel modelContract) 
             : base(viewContract, modelContract)
         {
         }
@@ -18,6 +18,7 @@ namespace UI.Credits
             View.TransferCreditsEvent += OnTransferCredits;
             View.BetView.IncreaseEvent += OnIncrease;
             View.BetView.DecreaseEvent += OnDecrease;
+            View.BetView.MaxBetEvent += OnMaxBet;
         }
 
         public override void Close()
@@ -25,6 +26,7 @@ namespace UI.Credits
             View.TransferCreditsEvent -= OnTransferCredits;
             View.BetView.IncreaseEvent -= OnIncrease;
             View.BetView.DecreaseEvent -= OnDecrease;
+            View.BetView.MaxBetEvent -= OnMaxBet;
             
             base.Close();
         }
@@ -37,6 +39,11 @@ namespace UI.Credits
         private void OnDecrease()
         {
             Model.DecreaseBet();
+        }
+
+        private void OnMaxBet()
+        {
+            Model.MaxBet();
         }
 
         private void OnTransferCredits(long credits)

@@ -1,4 +1,6 @@
-﻿namespace Slots.Game.Events
+﻿using Events.Data;
+
+namespace Slots.Game.Events
 {
     public interface IEventTriggerService
     {

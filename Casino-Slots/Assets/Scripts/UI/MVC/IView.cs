@@ -1,5 +1,6 @@
 using System;
 using ResourceProvider;
+using Services.ResourceProvider;
 using UnityEngine;
 
 namespace UI.MVC

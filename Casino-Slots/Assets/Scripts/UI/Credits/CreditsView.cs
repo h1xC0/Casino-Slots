@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using Events.Data;
 using Slots.Game.Events;
 using TMPro;
 using UI.MVC;
@@ -37,7 +38,7 @@ namespace UI.Credits
 
         public void ShowCredits(IGameEventData gameEventData)
         {
-            if (gameEventData is not ICreditsPopupData creditsPopupData)
+            if (gameEventData is not ICreditsData creditsPopupData)
                 return;
             
             TransferCreditsEvent?.Invoke(creditsPopupData.CreditsAmount);

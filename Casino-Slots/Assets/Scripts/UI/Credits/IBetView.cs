@@ -6,5 +6,6 @@ namespace UI.Credits
     {
         event Action IncreaseEvent;
         event Action DecreaseEvent;
+        event Action MaxBetEvent;
     }
 }
