@@ -5,7 +5,7 @@ namespace UI.WindowManager
 {
     public interface IWindowManager
     {
-        void Open<TController>()
+        TController Open<TController>()
             where TController : class, IController<IView, IModel<IView>>;
             
             // where TView : Component, IView

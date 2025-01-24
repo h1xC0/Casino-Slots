@@ -40,8 +40,9 @@ namespace Installers
             base.Start();
             var windowManager = Container.Resolve<IWindowManager>();
 
-            windowManager.Open<CreditsController>();
-            windowManager.Open<ReelsController>();
+            var creditsController = windowManager.Open<CreditsController>();
+            var reelsController = windowManager.Open<ReelsController>();
+            windowManager.SetSortingIndex(creditsController, 1);
         }
 
         private void BindServices()

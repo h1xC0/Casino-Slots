@@ -6,9 +6,9 @@ namespace UI.Credits
     public class CreditsModel : Model<ICreditsView>, ICreditsModel
     {
         public long Credits { get; private set; } = 1000;
-        public long Bet { get; private set; } = 100;
+        public long Bet { get; private set; } = 10;
 
-        public int BetSize => 100;
+        public int BetSize => 10;
 
         public CreditsModel(ICreditsView view) 
             : base(view)
@@ -25,7 +25,7 @@ namespace UI.Credits
         public void SpendCredits()
         {
             SetCredits(-Bet);
-            OnModelChanged(true);
+            OnModelChanged();
         }
         
         public void IncreaseBet()

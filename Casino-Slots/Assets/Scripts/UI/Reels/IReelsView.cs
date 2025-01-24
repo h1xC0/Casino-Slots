@@ -11,5 +11,7 @@ namespace UI.Reels
         event Action ReelsSpinEvent;
         IRollerManager RollerManager { get; }
         void Initialize(IAudioService audioService, IEventTriggerService eventTriggerService);
+        void SetButtonInteractable(bool flag);
+        void SetButtonActive(bool flag);
     }
 }

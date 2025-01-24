@@ -1,12 +1,15 @@
 ﻿using UI.MVC;
+using UI.WindowManager;
 
 namespace UI.Reels
 {
     public class ReelsModel : Model<IReelsView>, IReelsModel
     {
-        public ReelsModel(IReelsView view) : base(view)
+        private readonly IWindowManager _windowManager;
+        
+        public ReelsModel(IReelsView view, IWindowManager windowManager) : base(view)
         {
-            
+            _windowManager = windowManager;
         }
     }
 

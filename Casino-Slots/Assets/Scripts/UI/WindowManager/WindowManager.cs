@@ -26,7 +26,7 @@ namespace UI.WindowManager
             _windowsParent = parent;
         } 
 
-        public void Open<TController>() 
+        public TController Open<TController>() 
             where TController : class, IController<IView, IModel<IView>>
         {
             var viewModel = CreateViewModel<TController>(_windowsParent);
@@ -38,6 +38,7 @@ namespace UI.WindowManager
             openInfo.Controller.Open();
             _activeWindows.Add(openInfo.Controller.GetType(), openInfo);
             Debug.Log($"A controller was created with hash <color=green>{openInfo.Hash}</color>");
+            return (TController)openInfo.Controller;
         }
 
         public bool IsOpened<TPresenter>() 

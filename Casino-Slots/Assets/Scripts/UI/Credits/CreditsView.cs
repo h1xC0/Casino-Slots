@@ -14,6 +14,7 @@ namespace UI.Credits
         public IBetView BetView => _betView;
         [SerializeField] private BetView _betView;
         [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private TextMeshProUGUI _winningsTMP;
         [SerializeField] private Transform _creditsTransform;
 
         private const float _creditsWaitDelay = 0.65f;
@@ -40,9 +41,18 @@ namespace UI.Credits
         {
             if (gameEventData is not ICreditsData creditsPopupData)
                 return;
-            
+
+            AnimateWinnings(creditsPopupData.CreditsAmount);
             TransferCreditsEvent?.Invoke(creditsPopupData.CreditsAmount);
             Debug.Assert(creditsPopupData != null);
+        }
+
+        public void ShowLosings(IGameEventData gameEventData)
+        {
+            var spinResultData = gameEventData as SpinResultData;
+
+            if(spinResultData?.SpinResultGrid.NumberOfColumns == 0 && spinResultData.SpinResultGrid.NumberOfRows == 0)
+                AnimateWinnings(0);
         }
 
         private void ShowAnimationCredits(float modelCredits, bool animate = false)
@@ -59,19 +69,36 @@ namespace UI.Credits
                 _credits = newValue;
                 _text.text = ToMoneyFormat(_credits);
             });
-            AnimateCredits();
+            AnimateCredits(_creditsTransform);
         }
 
-        private Sequence AnimateCredits()
+        private Sequence AnimateCredits(Transform transform)
         {
             var sequence = DOTween.Sequence();
             var scaleMultiplier = .2f;
 
-            sequence.Append(_creditsTransform.DOScale(_creditsTransform.localScale * (1 + scaleMultiplier), _creditsWaitDelay));
+            sequence.Append(transform.DOScale(transform.localScale * (1 + scaleMultiplier), _creditsWaitDelay));
 
             sequence.SetEase(Ease.OutQuad);
-            sequence.SetLoops(15, LoopType.Yoyo);
-            sequence.OnComplete(() => _creditsTransform.DOScale(_originalScale, 0.5f));
+            sequence.SetLoops(10, LoopType.Yoyo);
+            sequence.OnComplete(() => transform.DOScale(Vector3.one, 0.5f));
+
+            return sequence;
+        }
+        
+        private Sequence AnimateWinnings(long credits)
+        {
+            var sequence = DOTween.Sequence();
+            _winningsTMP.text = credits > 0 ? "You won " + ToMoneyFormat(credits) + " credits" : "<color=red>No win</color>";
+            _winningsTMP.enableVertexGradient = credits > 0;
+            sequence.SetEase(Ease.OutSine);
+
+            sequence.Append(DOVirtual.Float(_winningsTMP.alpha, 1, 1, newValue => _winningsTMP.alpha = newValue));
+            sequence.Join(_winningsTMP.transform.DOScale(Vector3.one, 1));
+            sequence.Append(AnimateCredits(_winningsTMP.transform));
+
+            sequence.Append(DOVirtual.Float(_winningsTMP.alpha, 0, 2f, newValue => _winningsTMP.alpha = newValue));
+            sequence.Join(_creditsTransform.DOScale(Vector3.zero, 1f));
 
             return sequence;
         }

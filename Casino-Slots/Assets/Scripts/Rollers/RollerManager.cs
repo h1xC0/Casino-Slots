@@ -35,7 +35,7 @@ namespace Rollers
 
         private const float _startingRollerXPosition = -461f;
         private const float _spacingBetweenRollers = 230f;
-        private const float _delayBetweenRollersInSeconds = 0.25f;
+        private const float _delayBetweenRollersInSeconds = 0.1f;
 
         public const int NumberOfRowsInGrid = 3;
         public const int NumberOfColumnsInGrid = 5;

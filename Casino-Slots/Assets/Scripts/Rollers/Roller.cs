@@ -19,8 +19,8 @@ namespace Rollers
         [Inject] private IAudioService _audioService;
         [Inject] private RollerItemFactory _rollerItemFactory;
 
-        private const float _minSpinTimeInSeconds = 0.5f;
-        private const float _maxSpinTimeInSeconds = 2f;
+        private const float _minSpinTimeInSeconds = .5f;
+        private const float _maxSpinTimeInSeconds = 1f;
         private const float _centerItemDuration = .5f;
 
         private const float _itemSpinSpeed = 2000f;
@@ -28,7 +28,7 @@ namespace Rollers
         private const float _spacingBetweenItems = 212f;
         private const float _itemBottomLimit = -355f;
 
-        private bool _centerItemsOnScreen = false;
+        private bool _centerItemsOnScreen;
 
         public void Initialize(RollerSequenceLibrary itemSequence, SpriteLibrary spriteAssets)
         {
@@ -38,6 +38,11 @@ namespace Rollers
 
         private void Update()
         {
+            if (!IsSpinning)
+            {
+                return;
+            }
+            
             SpinItems();
         }
 
@@ -108,8 +113,14 @@ namespace Rollers
 
         private IEnumerator StopSpinAfterDelay(float delayInSeconds)
         {
-            RequestSpinState(false, CenterItemsOnScreenIfNecessary);
             yield return new WaitForSeconds(delayInSeconds);
+            RequestStopSpin();
+            CenterItemsOnScreenIfNecessary();
+            // RequestSpinState(false, CenterItemsOnScreenIfNecessary);
+        }
+
+        private void RequestStopSpin()
+        {
             IsSpinning = false;
             _centerItemsOnScreen = true;
             _audioService.Play("Stop Roller");
@@ -123,7 +134,7 @@ namespace Rollers
                 for (int i = 0; i < _items.Count; ++i)
                 {
                     localPosition = Vector3.up * _startingItemYPosition + (i * GetSpacingBetweenItems());
-                    _items[i].transform.DOLocalMove(localPosition, _centerItemDuration).SetEase(Ease.InCubic);
+                    _items[i].transform.DOLocalMove(localPosition, _centerItemDuration).SetEase(Ease.OutCubic);
                 }
                 if (_items[^1] && Mathf.Abs(_items[^1].transform.localPosition.y - localPosition.y) < 0.01f)
                 {

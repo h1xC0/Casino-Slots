@@ -29,6 +29,11 @@ namespace UI.Reels
             _spin.SetButtonInteraction(_spinButton, _canvasGroup, flag);
         }
 
+        public void SetButtonActive(bool flag)
+        {
+            _spinButton.gameObject.SetActive(flag);
+        }
+
         private void ReelsSpin()
         {
             ReelsSpinEvent?.Invoke();

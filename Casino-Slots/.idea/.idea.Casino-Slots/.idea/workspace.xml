@@ -5,31 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa7e526c-51fc-4a48-b2df-f906e33f79ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Data/SpinResultData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Data/SpinResultData.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Casino-Slots/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Casino-Slots/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/LuckiestGuy-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/LuckiestGuy-Regular SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Libraries/Pay Table.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Libraries/Pay Table.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Libraries/Roller Sequences/Roller 2 Sequence.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Libraries/Roller Sequences/Roller 2 Sequence.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/Roller Sequences/Roller 3 Sequence.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Libraries/Roller Sequences/Roller 3 Sequence.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Libraries/Roller Sequences/Roller 4 Sequence.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Libraries/Roller Sequences/Roller 4 Sequence.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libraries/Roller Sequences/Roller 5 Sequence.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Libraries/Roller Sequences/Roller 5 Sequence.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/CreditsView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/CreditsView.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/ReelsView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/ReelsView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Libraries/PayTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Libraries/PayTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Libraries/RollerSequenceLibrary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Libraries/RollerSequenceLibrary.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rollers/Roller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rollers/Roller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerItemFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerItemFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerItemType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerItemType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rollers/RollerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/BetView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/BetView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/ICreditsModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/ICreditsModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Credits/CreditsView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/IReelsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/IReelsView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/WindowManager/IWindowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/WindowManager/IWindowManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/WindowManager/WindowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/WindowManager/WindowManager.cs" afterDir="false" />
@@ -46,6 +41,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Unity Projects/casino-slots/Casino-Slots/Assets/Scripts/Rollers/Roller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Services/ResourceProvider/ResourceNames.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0b78209fd00d4f419f30dd210cbab239176600/34/34787e3d/UnitySynchronizationContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0b78209fd00d4f419f30dd210cbab239176600/62/054b955e/SetupCoroutine.cs" root0="FORCE_HIGHLIGHTING" />
@@ -145,7 +141,7 @@
       <workItem from="1737489586627" duration="711000" />
       <workItem from="1737581262922" duration="5723000" />
       <workItem from="1737635114830" duration="10184000" />
-      <workItem from="1737672446537" duration="9397000" />
+      <workItem from="1737672446537" duration="16316000" />
     </task>
     <servers />
   </component>
@@ -161,24 +157,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/Reels/ReelsView.cs</url>
-          <line>28</line>
-          <properties documentPath="C:\Unity Projects\casino-slots\Casino-Slots\Assets\Scripts\UI\Reels\ReelsView.cs" containingFunctionPresentation="Method 'SetButtonInteractable'">
-            <startOffsets>
-              <option value="934" />
-            </startOffsets>
-            <endOffsets>
-              <option value="994" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

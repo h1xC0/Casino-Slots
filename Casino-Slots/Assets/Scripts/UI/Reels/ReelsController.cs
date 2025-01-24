@@ -43,13 +43,22 @@ namespace UI.Reels
             View.RollerManager.Initialize(_audioService, _eventTriggerService, _rollerFactory, _rollerSequencesLibrary, _spriteLibrary);
 
             _creditsController = (CreditsController)_windowManager.GetWindow<CreditsController>().Controller;
-            View.ReelsSpinEvent += _creditsController.SpendCredits;
+            View.ReelsSpinEvent += SpendCredits;
         }
 
         public override void Close()
         {
-            View.ReelsSpinEvent -= _creditsController.SpendCredits;
+            View.ReelsSpinEvent -= SpendCredits;
             base.Close();
+        }
+
+        private void SpendCredits()
+        {
+            _creditsController.SpendCredits();
+            if (_creditsController.Model.Credits <= 0)
+            {
+                View.SetButtonActive(false);
+            }
         }
     }
 }

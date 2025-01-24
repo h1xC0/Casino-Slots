@@ -17,6 +17,8 @@ namespace UI.Credits
         [SerializeField] private Button _maxBetButton;
         [SerializeField] private TMP_Text _betTMP;
 
+        private long _credits;
+
         public override void Initialize()
         {
             _reduceButton.onClick.AddListener(OnDecrease);
@@ -32,6 +34,14 @@ namespace UI.Credits
         {
             _betTMP.text = ToMoneyFormat(bet);
             _maxBetButton.interactable = bet != credits;
+            _credits = credits;
+            if (credits == 0)
+            {
+                _maxBetButton.interactable = false;
+                _reduceButton.interactable = false;
+                _increaseButton.interactable = false;
+                return;
+            }
             
             if(bet > betSize)
                 _reduceButton.interactable = true;

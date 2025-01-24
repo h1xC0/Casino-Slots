@@ -26,6 +26,11 @@ namespace Rollers
             _bottomLimit = bottomLimit;
         }
 
+        public bool IsSpinning()
+        {
+            return _moveSpeed > 0;
+        }
+
         public void RequestSpin()
         {
             _moveSpeed = _startMoveSpeed;
@@ -33,8 +38,8 @@ namespace Rollers
 
         public void RequestStop(Action callback = null)
         {
-            DOVirtual.Float(_moveSpeed, 0, 8f, newValue => _moveSpeed = newValue)
-                .SetEase(Ease.OutSine)
+            DOVirtual.Float(_moveSpeed, 0, 3f, newValue => _moveSpeed = newValue)
+                .SetEase(Ease.InSine)
                 .OnComplete(() => callback?.Invoke());
         }
 
