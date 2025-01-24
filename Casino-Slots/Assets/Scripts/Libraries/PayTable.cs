@@ -1,5 +1,5 @@
-﻿using Slots.Game.Rollers;
-using System;
+﻿using System;
+using Rollers;
 using UnityEngine;
 
 namespace Slots.Game.Libraries

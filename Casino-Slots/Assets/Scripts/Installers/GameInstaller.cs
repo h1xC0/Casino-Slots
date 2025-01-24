@@ -1,8 +1,10 @@
-﻿using ResourceProvider;
+﻿using Patterns;
+using ResourceProvider;
+using Rewards;
+using Rollers;
 using Services.ResourceProvider;
 using Slots.Game.Audio;
 using Slots.Game.Events;
-using Slots.Game.Rollers;
 using UI.Credits;
 using UI.Reels;
 using UI.WindowManager;
@@ -45,6 +47,11 @@ namespace Installers
         private void BindServices()
         {
             Container
+                .BindInterfacesTo<ResourceProviderService>()
+                .FromNew()
+                .AsSingle();
+            
+            Container
                 .Bind<IAudioService>()
                 .FromComponentInNewPrefab(_audioServiceInstance)
                 .UnderTransform(transform)
@@ -55,10 +62,16 @@ namespace Installers
                 .FromComponentInNewPrefab(_triggerServiceInstance)
                 .UnderTransform(transform)
                 .AsSingle();
+            
+            Container.Bind<IGridToLineConverter>()
+                .To<GridToLineConverter>()
+                .AsSingle();
 
-            Container
-                .BindInterfacesTo<ResourceProviderService>()
-                .FromNew()
+            Container.Bind<ILinePatternChecker>()
+                .To<LinePatternChecker>()
+                .AsSingle();
+
+            Container.BindInterfacesTo<PayTableRewardsRetriever>()
                 .AsSingle();
         }
 

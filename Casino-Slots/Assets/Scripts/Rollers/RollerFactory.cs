@@ -1,6 +1,6 @@
 ﻿using Zenject;
 
-namespace Slots.Game.Rollers
+namespace Rollers
 {
     public class RollerFactory : PlaceholderFactory<Roller> { }
 }

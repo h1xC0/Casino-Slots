@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Events.Data;
+using Patterns;
 using Slots.Game.Audio;
 using Slots.Game.Events;
 using Slots.Game.Libraries;
-using Slots.Game.Rollers;
 using UnityEngine;
+using Grid = Patterns.Grid;
 
 namespace Rollers
 {
@@ -28,6 +30,7 @@ namespace Rollers
         private RollerSequencesLibrary _rollerSequencesLibrary;
         private SpriteLibrary _spriteAssets;
 
+        private IGrid _gridOfStoppedRollerItemsOnScreen;
         private Roller[] _rollers;
 
         private const float _startingRollerXPosition = -461f;
@@ -50,6 +53,7 @@ namespace Rollers
             _spriteAssets = spriteAssets;
             
             _rollers = new Roller[NumberOfColumnsInGrid];
+            _gridOfStoppedRollerItemsOnScreen = new Grid(NumberOfRowsInGrid, NumberOfColumnsInGrid);
             InstantiateAndAddRollersToList();
         }
 
@@ -60,6 +64,7 @@ namespace Rollers
 
         public void ResetGrid()
         {
+            _gridOfStoppedRollerItemsOnScreen.ResetGridValues();
         }
 
         private void InstantiateAndAddRollersToList()
@@ -90,8 +95,10 @@ namespace Rollers
                 yield return new WaitWhile(() => _rollers[i].IsSpinning);
                 yield return new WaitForSeconds(_delayBetweenRollersInSeconds);
                 _rollers[i].GetRollerItemsOnScreen(out List<int> itemsOnScreen);
+                _gridOfStoppedRollerItemsOnScreen.SetColumnValues(i, itemsOnScreen);
             }
             _audioService.Stop("Spin Roller");
+            _eventTriggerService.Trigger("Check Spin Result", new SpinResultData(_gridOfStoppedRollerItemsOnScreen));
         }
     }
 }

@@ -1,15 +1,14 @@
 ﻿using System;
-using Slots.Game.Audio;
-using Slots.Game.Libraries;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using Rollers;
+using Slots.Game.Audio;
+using Slots.Game.Libraries;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
 
-namespace Slots.Game.Rollers
+namespace Rollers
 {
     public class Roller : MonoBehaviour
     {

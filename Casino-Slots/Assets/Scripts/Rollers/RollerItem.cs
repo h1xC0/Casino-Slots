@@ -2,9 +2,8 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
-namespace Slots.Game.Rollers
+namespace Rollers
 {
     public class RollerItem : MonoBehaviour
     {

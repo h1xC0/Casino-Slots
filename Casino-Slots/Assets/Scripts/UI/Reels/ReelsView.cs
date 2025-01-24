@@ -1,7 +1,7 @@
-﻿using Rollers;
+﻿using System;
+using Rollers;
 using Slots.Game.Audio;
 using Slots.Game.Events;
-using Slots.Game.Rollers;
 using UI.MVC;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +10,7 @@ namespace UI.Reels
 {
     public class ReelsView : View, IReelsView
     {
+        public event Action ReelsSpinEvent;
         public IRollerManager RollerManager => _rollerManager;
         [SerializeField] private RollerManager _rollerManager;
         [SerializeField] private Button _spinButton;
@@ -19,7 +20,7 @@ namespace UI.Reels
         public void Initialize(IAudioService audioService, IEventTriggerService eventTriggerService)
         {
             _spin = new SpinButton(audioService, eventTriggerService);
-            _spinButton.onClick.AddListener(SetButtonDisabled);
+            _spinButton.onClick.AddListener(ReelsSpin);
             _spinButton.onClick.AddListener(() => _spin.TriggerStartSpinEvent(this));
         }
 
@@ -28,15 +29,15 @@ namespace UI.Reels
             _spin.SetButtonInteraction(_spinButton, _canvasGroup, flag);
         }
 
-        private void SetButtonDisabled()
+        private void ReelsSpin()
         {
-            _spinButton.interactable = false;
+            ReelsSpinEvent?.Invoke();
         }
 
         public override void Dispose()
         {
             base.Dispose();
-            _spinButton.onClick.RemoveListener(SetButtonDisabled);
+            _spinButton.onClick.RemoveListener(ReelsSpin);
             _spinButton.onClick.RemoveListener(() => _spin.TriggerStartSpinEvent(this));
         }
     }

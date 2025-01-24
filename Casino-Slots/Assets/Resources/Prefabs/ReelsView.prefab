@@ -250,6 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7266664796380438701}
   - component: {fileID: 3730224631105312149}
+  - component: {fileID: 4868277673705644053}
   - component: {fileID: 8252696180365636422}
   m_Layer: 5
   m_Name: ReelsView
@@ -296,6 +297,34 @@ MonoBehaviour:
   _rollerManager: {fileID: 1207510704691907158}
   _spinButton: {fileID: 3237200337201102770}
   _canvasGroup: {fileID: 2397224189488094338}
+--- !u!114 &4868277673705644053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2876332413637329695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 327dbbcf2ac139742a4eb9e9bc1fe6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: a5c0324dd753ddf4191f77334078508f, type: 2}
+  _onTriggerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3730224631105312149}
+        m_TargetAssemblyTypeName: UI.Reels.ReelsView, Slots.Game
+        m_MethodName: SetButtonInteractable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8252696180365636422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +341,7 @@ MonoBehaviour:
   _onTriggerEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3730224631105312149}
         m_TargetAssemblyTypeName: UI.Reels.ReelsView, Slots.Game
         m_MethodName: SetButtonInteractable
         m_Mode: 6

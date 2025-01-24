@@ -13,7 +13,7 @@ namespace UI.Credits
         {
             base.Open();
             
-            View.OnDisplay(Model.Credits.Value, Model.Bet.Value, Model.BetSize);
+            View.OnDisplay(Model.Credits, Model.Bet, Model.BetSize);
             
             View.TransferCreditsEvent += OnTransferCredits;
             View.BetView.IncreaseEvent += OnIncrease;
@@ -29,6 +29,11 @@ namespace UI.Credits
             View.BetView.MaxBetEvent -= OnMaxBet;
             
             base.Close();
+        }
+        
+        public void SpendCredits()
+        {
+            Model.SpendCredits();
         }
 
         private void OnIncrease()
@@ -48,8 +53,7 @@ namespace UI.Credits
 
         private void OnTransferCredits(long credits)
         {
-            Model.Credits.Value += credits;
-            Model.OnModelChanged(true);
+            Model.EarnCredits(credits);
         }
     }
 }

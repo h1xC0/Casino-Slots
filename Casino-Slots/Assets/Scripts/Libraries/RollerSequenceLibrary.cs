@@ -1,4 +1,4 @@
-﻿using Slots.Game.Rollers;
+﻿using Rollers;
 using UnityEngine;
 
 namespace Slots.Game.Libraries

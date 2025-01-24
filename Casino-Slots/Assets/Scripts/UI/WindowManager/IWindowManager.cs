@@ -15,6 +15,7 @@ namespace UI.WindowManager
             where TPresenter : class, IController<IView, IModel<IView>>;
             
         void SetSortingIndex<TController>(TController controller, int index) where TController : IController<IView, IModel<IView>>;
+        IWindowOpenInfo GetWindow<TController>() where TController : class, IController<IView, IModel<IView>>;
         void Close<TController>(TController controller);
     }
 }

@@ -11,7 +11,7 @@ namespace UI.WindowManager
         public event Action<IController<IView, IModel<IView>>> RegisterEvent;
 
         private Transform _windowsParent;
-        private Dictionary<int, IWindowOpenInfo> _activeWindows;
+        private Dictionary<Type, IWindowOpenInfo> _activeWindows;
         private readonly IWindowFactory _windowFactory;
 
         private int _lastSortingIndex;
@@ -20,7 +20,7 @@ namespace UI.WindowManager
 
         public WindowManager(IWindowFactory windowFactory, Transform parent)
         {
-            _activeWindows = new Dictionary<int, IWindowOpenInfo>();
+            _activeWindows = new Dictionary<Type, IWindowOpenInfo>();
             _viewModelCreators = new Dictionary<Type, Action<Transform, Action<IView, IModel<IView>>>>();
             _windowFactory = windowFactory;
             _windowsParent = parent;
@@ -36,14 +36,14 @@ namespace UI.WindowManager
             var openInfo = new WindowOpenInfo(controller, _lastSortingIndex);
 
             openInfo.Controller.Open();
-            _activeWindows.Add(openInfo.Hash, openInfo);
+            _activeWindows.Add(openInfo.Controller.GetType(), openInfo);
             Debug.Log($"A controller was created with hash <color=green>{openInfo.Hash}</color>");
         }
 
         public bool IsOpened<TPresenter>() 
             where TPresenter : class, IController<IView, IModel<IView>> => 
             _activeWindows
-                .Any(windowOpenPair => windowOpenPair.Key.GetType() == typeof(TPresenter));
+                .Any(windowOpenPair => windowOpenPair.Key == typeof(TPresenter));
 
         public void Register<TController>(Action<Transform, Action<IView, IModel<IView>>> createMethod)
             where TController : class, IController<IView, IModel<IView>>
@@ -61,7 +61,7 @@ namespace UI.WindowManager
             {
                 if(windowInfo.Value.SortingIndex == index)
                 {
-                    _activeWindows.TryGetValue(controller.GetHashCode(), out IWindowOpenInfo currentWindowInfo);
+                    _activeWindows.TryGetValue(controller.GetType(), out IWindowOpenInfo currentWindowInfo);
                     if(currentWindowInfo == null) break;
                     var auxIndex = controller.View.RectTransform.GetSiblingIndex();
                     windowInfo.Value.SetSortingIndex(auxIndex);
@@ -72,16 +72,24 @@ namespace UI.WindowManager
             }
         }
 
+        public IWindowOpenInfo GetWindow<TController>() 
+            where TController : class, IController<IView, IModel<IView>>
+        {
+            _activeWindows.TryGetValue(typeof(TController), out IWindowOpenInfo currentWindowInfo);
+
+            return currentWindowInfo;
+        }
+
         public void Close<TController>(TController controller)
         {
-            if(_activeWindows.TryGetValue(controller.GetHashCode(), out IWindowOpenInfo openInfo) == false)
+            if(_activeWindows.TryGetValue(controller.GetType(), out IWindowOpenInfo openInfo) == false)
             {
                 Debug.Log($"<color=yellow>Didn't {controller.GetType().Name} controller");
                 return;
             }
 
             openInfo.Controller.Close();
-            _activeWindows.Remove(openInfo.Hash);
+            _activeWindows.Remove(openInfo.Controller.GetType());
             _lastSortingIndex--;
         }
 

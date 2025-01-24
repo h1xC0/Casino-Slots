@@ -1,8 +1,10 @@
-﻿using Slots.Game.Audio;
+﻿using Rollers;
+using Slots.Game.Audio;
 using Slots.Game.Events;
 using Slots.Game.Libraries;
-using Slots.Game.Rollers;
+using UI.Credits;
 using UI.MVC;
+using UI.WindowManager;
 
 namespace UI.Reels
 {
@@ -13,6 +15,8 @@ namespace UI.Reels
         private readonly RollerFactory _rollerFactory;
         private readonly RollerSequencesLibrary _rollerSequencesLibrary;
         private readonly SpriteLibrary _spriteLibrary;
+        private readonly IWindowManager _windowManager;
+        private CreditsController _creditsController;
 
         public ReelsController(IReelsView viewContract,
             IReelsModel modelContract,
@@ -20,7 +24,8 @@ namespace UI.Reels
             IEventTriggerService eventTriggerService,
             RollerFactory rollerFactory,
             RollerSequencesLibrary rollerSequencesLibrary,
-            SpriteLibrary spriteLibrary) 
+            SpriteLibrary spriteLibrary,
+            IWindowManager windowManager) 
             : base(viewContract, modelContract)
         {
             _audioService = audioService;
@@ -28,6 +33,7 @@ namespace UI.Reels
             _rollerFactory = rollerFactory;
             _rollerSequencesLibrary = rollerSequencesLibrary;
             _spriteLibrary = spriteLibrary;
+            _windowManager = windowManager;
         }
 
         public override void Open()
@@ -35,6 +41,15 @@ namespace UI.Reels
             base.Open();
             View.Initialize(_audioService, _eventTriggerService);
             View.RollerManager.Initialize(_audioService, _eventTriggerService, _rollerFactory, _rollerSequencesLibrary, _spriteLibrary);
+
+            _creditsController = (CreditsController)_windowManager.GetWindow<CreditsController>().Controller;
+            View.ReelsSpinEvent += _creditsController.SpendCredits;
+        }
+
+        public override void Close()
+        {
+            View.ReelsSpinEvent -= _creditsController.SpendCredits;
+            base.Close();
         }
     }
 }

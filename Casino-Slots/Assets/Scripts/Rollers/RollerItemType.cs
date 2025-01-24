@@ -1,13 +1,19 @@
-﻿namespace Slots.Game.Rollers
+﻿namespace Rollers
 {
     public enum RollerItemType
     {
-        Bell,
-        Watermelon,
-        Grapes,
-        Plums,
-        Orange,
-        Lemon,
-        Cherries
+        A,
+        K,
+        Q,
+        J,
+        One,
+        Zero,
+        Diamonds,
+        Hearts,
+        Spades,
+        Clubs,
+        Dollars,
+        Stars,
+        Seven
     }
 }

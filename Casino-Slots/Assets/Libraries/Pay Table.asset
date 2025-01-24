@@ -69,5 +69,19 @@ MonoBehaviour:
       CreditsAmount: 5
     - ItemsAmount: 2
       CreditsAmount: 2
+  - Type: 7
+    Rewards:
+    - ItemsAmount: 3
+      CreditsAmount: 10
+    - ItemsAmount: 3
+      CreditsAmount: 2
+  - Type: 7
+    Rewards:
+    - ItemsAmount: 5
+      CreditsAmount: 20
+    - ItemsAmount: 2
+      CreditsAmount: 5
+    - ItemsAmount: 3
+      CreditsAmount: 10
   _minItemCountForReward: 2
   _maxItemCountForReward: 4

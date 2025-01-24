@@ -5,8 +5,8 @@ namespace UI.Credits
 {
     public class CreditsModel : Model<ICreditsView>, ICreditsModel
     {
-        public ReactiveProperty<long> Credits { get; set; } = new(1000);
-        public ReactiveProperty<long> Bet { get; set; } = new(100);
+        public long Credits { get; private set; } = 1000;
+        public long Bet { get; private set; } = 100;
 
         public int BetSize => 100;
 
@@ -15,40 +15,57 @@ namespace UI.Credits
         {
             OnModelChanged();
         }
+
+        public void EarnCredits(long credits = 0)
+        {
+            SetCredits(credits);
+            OnModelChanged(true);
+        }
+
+        public void SpendCredits()
+        {
+            SetCredits(-Bet);
+            OnModelChanged(true);
+        }
         
         public void IncreaseBet()
         {
-            SetAmount(BetSize);
+            SetBet(BetSize);
             OnModelChanged();
         }
 
         public void DecreaseBet()
         {
-            SetAmount(-BetSize);
+            SetBet(-BetSize);
             OnModelChanged();
         }
 
         public void MaxBet()
         {
-            Bet.Value = Credits.Value;
+            Bet = Credits;
             OnModelChanged();
         }
         
-        private void SetAmount(long value)
+        private void SetBet(long value)
         {
-            Bet.Value += value;
+            Bet += value;
+        }
+
+        private void SetCredits(long value)
+        {
+            Credits += value;
         }
 
         public void OnModelChanged(bool animate = false)
         {
-            View.OnDisplay(Credits.Value, Bet.Value, BetSize, animate);
+            View.OnDisplay(Credits, Bet, BetSize, animate);
             
-            if (Credits.Value < BetSize)
-                Bet.Value = Credits.Value;
+            if (Credits < BetSize)
+                Bet = Credits;
             else
             {
-                if(Bet.Value < BetSize)
-                    Bet.Value = BetSize;
+                if(Bet < BetSize)
+                    Bet = BetSize;
             }
         }
     }
