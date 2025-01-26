@@ -56,11 +56,11 @@ MonoBehaviour:
   - Type: 5
     Rewards:
     - ItemsAmount: 4
-      CreditsAmount: 20
+      CreditsAmount: 50
     - ItemsAmount: 3
-      CreditsAmount: 10
+      CreditsAmount: 25
     - ItemsAmount: 2
-      CreditsAmount: 5
+      CreditsAmount: 10
   - Type: 6
     Rewards:
     - ItemsAmount: 4
@@ -83,5 +83,33 @@ MonoBehaviour:
       CreditsAmount: 5
     - ItemsAmount: 3
       CreditsAmount: 10
+  - Type: 9
+    Rewards:
+    - ItemsAmount: 5
+      CreditsAmount: 1000
+    - ItemsAmount: 2
+      CreditsAmount: 500
+    - ItemsAmount: 3
+      CreditsAmount: 750
+    - ItemsAmount: 4
+      CreditsAmount: 750
+  - Type: 10
+    Rewards:
+    - ItemsAmount: 5
+      CreditsAmount: 1499
+    - ItemsAmount: 3
+      CreditsAmount: 999
+  - Type: 11
+    Rewards:
+    - ItemsAmount: 4
+      CreditsAmount: 20
+    - ItemsAmount: 3
+      CreditsAmount: 10
+  - Type: 12
+    Rewards:
+    - ItemsAmount: 5
+      CreditsAmount: 1000000
+    - ItemsAmount: 3
+      CreditsAmount: 500000
   _minItemCountForReward: 2
   _maxItemCountForReward: 10
